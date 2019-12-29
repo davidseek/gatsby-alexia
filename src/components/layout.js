@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import { StaticQuery, graphql } from "gatsby";
 import { HelmetDatoCms } from "gatsby-source-datocms";
+import Img from 'gatsby-image'
 
 import "../styles/index.sass";
 
@@ -12,7 +13,7 @@ const TemplateWrapper = ({ children }) => {
     <StaticQuery
       query={graphql`
         query LayoutQuery {
-          datoCmsSite {
+          datoCmsSite { 
             globalSeo {
               siteName
             }
@@ -28,8 +29,13 @@ const TemplateWrapper = ({ children }) => {
               childMarkdownRemark {
                 html
               }
-            }
+            } 
             copyright
+            logo {
+              fluid(maxWidth: 450, imgixParams: { fm: "png", auto: "compress" }) {
+                ...GatsbyDatoCmsSizes
+              } 
+            }
           }
           allDatoCmsSocialProfile(sort: { fields: [position], order: ASC }) {
             edges {
@@ -47,6 +53,9 @@ const TemplateWrapper = ({ children }) => {
             favicon={data.datoCmsSite.faviconMetaTags}
             seo={data.datoCmsHome.seoMetaTags}
           />
+
+
+
           <div className="container__sidebar">
             <div className="sidebar">
               <h6 className="sidebar__title">
@@ -59,7 +68,7 @@ const TemplateWrapper = ({ children }) => {
                     data.datoCmsHome.introTextNode.childMarkdownRemark.html
                 }}
               />
-              <ul className="sidebar__menu">
+              <ul className={`sidebar__menu ${showMenu ? "is-open" : ""}`}>
                 <li>
                   <Link to="/">Home</Link>
                 </li>
@@ -83,11 +92,22 @@ const TemplateWrapper = ({ children }) => {
                 {data.datoCmsHome.copyright}
               </div>
             </div>
-          </div>
+          </div> 
+
+
+
+        
           <div className="container__body">
+
             <div className="container__mobile-header">
-              <div className="mobile-header">
-                <div className="mobile-header__menu">
+
+              <div className="header">
+
+                <a className="header__a" href="./">
+                  <Img fluid={data.datoCmsHome.logo.fluid} className="header__logo" alt="logo" />
+                </a>  
+
+                <div className="header__menu">
                   <a
                     href="#"
                     onClick={e => {
@@ -96,11 +116,52 @@ const TemplateWrapper = ({ children }) => {
                     }}
                   />
                 </div>
-                <div className="mobile-header__logo">
-                  <Link to="/">{data.datoCmsSite.globalSeo.siteName}</Link>
-                </div>
+                
               </div>
             </div>
+
+            <div className="container__browser-header">
+
+              <div className="header">
+
+                <a className="header__a" href="./">
+                  <Img fluid={data.datoCmsHome.logo.fluid} className="header__logo" alt="logo" />
+                </a>
+
+                <ul>
+
+                  <li className="browser-header__menu">
+                    <Link to="/editorial" activeStyle={{ color: "rgb(255, 196, 186)" }}>EDITORIAL</Link>
+                  </li>
+
+                  <li className="browser-header__menu">
+                    <Link to="/" activeStyle={{ color: "rgb(255, 196, 186)" }}>COMMERCIAL</Link>
+                  </li>
+
+                  <li className="browser-header__menu">
+                    <Link to="/" activeStyle={{ color: "rgb(255, 196, 186)" }}>BEAUTY</Link>
+                  </li>
+
+                  <li className="browser-header__menu">
+                    <Link to="/" activeStyle={{ color: "rgb(255, 196, 186)" }}>PEOPLE</Link>
+                  </li>
+
+                  <li className="browser-header__menu">
+                    <Link to="/" activeStyle={{ color: "rgb(255, 196, 186)" }}>FILM & TV</Link>
+                  </li>
+
+                  <li className="browser-header__menu">
+                    <Link to="/about" activeStyle={{ color: "rgb(255, 196, 186)" }}>CONTACT</Link>
+                  </li>
+
+                  <li className="browser-header__menu">
+                    <Link to="/about" activeStyle={{ color: "rgb(255, 196, 186)" }}>ABOUT</Link>
+                  </li>
+                </ul>
+                
+              </div>
+            </div>
+
             {children}
           </div>
         </div>

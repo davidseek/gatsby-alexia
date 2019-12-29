@@ -1,4 +1,7 @@
 @media screen and (max-width: 899px)
+  .container__browser-header
+    display: none
+
   .container__sidebar
     box-sizing: border-box
     width: 200px
@@ -9,20 +12,20 @@
     bottom: 0
     left: 0
     z-index: 2
-    transform: translate3d(-200px, 0, 0)
+    transform: translate3d(100vw, 0, 0)
     transition: transform 0.2s ease-in-out
     padding: 20px
-    background-color: $light-bg-color
+    background-color: white
 
     .container.is-open &
-      transform: translate3d(0px, 0, 0);
+      transform: translate3d(calc(100vw - 100%), 0, 0);
 
   .container__body
     transform: translate3d(0px, 0, 0)
     transition: transform 0.2s ease-in-out
 
     .container.is-open &
-      transform: translate3d(200px, 0, 0)
+      transform: translate3d(-200px, 0, 0)
 
 @media screen and (min-width: 900px)
   .container
@@ -33,12 +36,7 @@
     display: none
 
   .container__sidebar
-    display: block
-    width: 30%
-    min-width: 320px
-    box-sizing: border-box
-    padding: 40px
-    background-color: $light-bg-color
+    display: none
 
   .container__body
     flex: 1

@@ -1,8 +1,8 @@
 {
   "name": "gatsby-datocms-demo",
-  "description": "Gatsby DatoCMS creative portfolio demo",
+  "description": "Alexia Apostolidou",
   "version": "1.0.0",
-  "author": "Stefano Verna <s.verna@datocms.com>",
+  "author": "David Seek <info@davidseek.com>",
   "dependencies": {
     "dotenv": "^8.1.0",
     "gatsby": "^2.15.30",
@@ -30,7 +30,7 @@
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\""
   },
-  "devDependencies": {
+  "devDependencies": { 
     "prettier": "^1.17.0"
   }
 }
