@@ -3,8 +3,15 @@ import { HelmetDatoCms } from 'gatsby-source-datocms'
 import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 
+var showImage = true
+
 export default ({ data }) => (
   <Layout>
+
+    <div className={`image ${showImage ? "is-open" : ""}`}>
+
+    </div>
+
     <article className="sheet">
       <HelmetDatoCms seo={data.datoCmsEditorial.seoMetaTags} />
       <div className="work__inner">
@@ -24,7 +31,17 @@ export default ({ data }) => (
           <div className="work__item">
 
             <figure className="card">
-              <img alt={data.datoCmsEditorial.title} key={fluid.src} src={fluid.src} />
+
+              <img 
+                alt={data.datoCmsEditorial.title} 
+                key={fluid.src} 
+                src={fluid.src}
+                onClick={e => {
+                  e.preventDefault();
+                  showImage = !showImage;
+                }} 
+              />
+
             </figure>
 
           </div>
