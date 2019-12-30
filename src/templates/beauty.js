@@ -7,12 +7,12 @@ export default ({ data }) => (
   <Layout>
     <article className="sheet">
       <HelmetDatoCms seo={data.datoCmsBeauty.seoMetaTags} />
-      <div className="sheet__inner">
+      <div className="work__inner">
 
         <h1 className="sheet__title">{data.datoCmsBeauty.title}</h1>
 
         <div 
-          className="sheet__body"
+          className="work__body"
           dangerouslySetInnerHTML={{
             __html: data.datoCmsBeauty.descriptionNode.childMarkdownRemark.html,
           }}
@@ -21,7 +21,7 @@ export default ({ data }) => (
 
         {data.datoCmsBeauty.gallery.map(({ fluid }) => (
 
-          <div className="showcase__item">
+          <div className="work__item">
 
             <figure className="card">
               <img alt={data.datoCmsBeauty.title} key={fluid.src} src={fluid.src} />

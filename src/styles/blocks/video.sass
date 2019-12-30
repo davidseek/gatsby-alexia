@@ -1,11 +1,21 @@
 .video
-    display: flex
+    display: initial
     position: relative !important
 
-.video__frame
-    justify-content: center
-    margin: auto
-    width: calc(100% - 32px)
-    height: 250px
-    margin-bottom: 16px
-    margin-left: 16px
+@media screen and (max-width: 900px)
+    .video__frame
+        justify-content: center
+        margin: auto
+        width: calc((100vw - 32px))
+        height: calc(((100vw - 32px)) * 0.6)
+        margin-bottom: 16px
+        margin-left: 16px
+
+@media screen and (min-width: 901px)
+    .video__frame
+        justify-content: center
+        margin: auto
+        width: calc((100vw - 48px) / 2)
+        height: calc(((100vw - 48px) / 2) * 0.6)
+        margin-bottom: 16px
+        margin-left: 16px
