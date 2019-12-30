@@ -22,6 +22,16 @@ const IndexPage = ({ data }) => (
         </div>
       ))}
     </Masonry>
+
+    <div className="imprint-container">
+      <div className="imprint-buttons">
+        <Link to={`/imprint`}>IMPRINT</Link>
+      </div>
+
+      <div className="imprint-buttons">
+        <Link to={`/datenschutz`}>DATENSCHUTZ</Link>
+      </div>
+    </div>
   </Layout>
 )
 

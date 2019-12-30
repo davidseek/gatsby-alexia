@@ -53,8 +53,6 @@ const TemplateWrapper = ({ children }) => {
             seo={data.datoCmsHome.seoMetaTags}
           />
 
-
-
           <div className="container__sidebar">
             <div className="sidebar">
 
