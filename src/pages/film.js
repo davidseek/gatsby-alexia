@@ -1,27 +1,28 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Masonry from 'react-masonry-component'
 import Layout from "../components/layout"
 
 const IndexPage = ({ data }) => (
   <Layout>
-    {data.allDatoCmsFilm.edges.map(({ node: element }) => (
+    <div>
+        {data.allDatoCmsFilm.edges.map(({ node: element }) => (
 
-    <div key={element.video.providerUid} className="video">
+            <div key={element.video.providerUid} className="video">
 
-        <iframe
-        className="video__frame"
-        src={getVideoURL(element)}
-        title={element.title}
-        allow="accelerometer; autoplay; encrypted-media; gyroscope"
-        frameBorder="0"
-        webkitallowfullscreen="true"
-        mozallowfullscreen="true"
-        allowFullScreen
-        />
+                <iframe
+                    className="video__frame"
+                    src={getVideoURL(element)}
+                    title={element.title}
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope"
+                    frameBorder="0"
+                    webkitallowfullscreen="true"
+                    mozallowfullscreen="true"
+                    allowFullScreen
+                />
+            </div>
+
+        ))}
     </div>
-
-    ))}
   </Layout>
 ) 
 
