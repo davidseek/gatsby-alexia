@@ -7,7 +7,28 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     graphql(`
       {
-        allDatoCmsWork {
+        allDatoCmsEditorial {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
+        allDatoCmsCommercial {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
+        allDatoCmsBeauty {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
+        allDatoCmsPeoplemodel {
           edges {
             node {
               slug
@@ -16,15 +37,55 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     `).then(result => {
-      result.data.allDatoCmsWork.edges.map(({ node: work }) => {
+
+      result.data.allDatoCmsEditorial.edges.map(({ node: editorial }) => {
+
         createPage({
-          path: `works/${work.slug}`,
-          component: path.resolve(`./src/templates/work.js`),
+          path: `works/${editorial.slug}`,
+          component: path.resolve(`./src/templates/editorial.js`),
           context: {
-            slug: work.slug,
+            slug: editorial.slug,
           },
         })
+
       })
+
+      result.data.allDatoCmsCommercial.edges.map(({ node: commercial }) => {
+
+        createPage({
+          path: `works/${commercial.slug}`,
+          component: path.resolve(`./src/templates/commercial.js`),
+          context: {
+            slug: commercial.slug,
+          },
+        })
+
+      })
+ 
+      result.data.allDatoCmsBeauty.edges.map(({ node: beauty }) => {
+
+        createPage({
+          path: `works/${beauty.slug}`,
+          component: path.resolve(`./src/templates/beauty.js`),
+          context: {
+            slug: beauty.slug,
+          },
+        })
+
+      })
+
+      result.data.allDatoCmsPeoplemodel.edges.map(({ node: people }) => {
+
+        createPage({
+          path: `works/${people.slug}`,
+          component: path.resolve(`./src/templates/people.js`),
+          context: {
+            slug: people.slug,
+          },
+        })
+
+      })
+
       resolve()
     })
   })

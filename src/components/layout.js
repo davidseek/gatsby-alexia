@@ -28,7 +28,7 @@ const TemplateWrapper = ({ children }) => {
             introTextNode {
               childMarkdownRemark {
                 html
-              }
+              } 
             } 
             copyright
             logo {
@@ -58,9 +58,11 @@ const TemplateWrapper = ({ children }) => {
 
           <div className="container__sidebar">
             <div className="sidebar">
-              <h6 className="sidebar__title">
-                <Link to="/">{data.datoCmsSite.globalSeo.siteName}</Link>
-              </h6>
+
+              <a className="header__a" href="./">
+                <Img fluid={data.datoCmsHome.logo.fluid} className="header__logo" alt="logo" />
+              </a>
+
               <div
                 className="sidebar__intro"
                 dangerouslySetInnerHTML={{
@@ -69,12 +71,35 @@ const TemplateWrapper = ({ children }) => {
                 }}
               />
               <ul className={`sidebar__menu ${showMenu ? "is-open" : ""}`}>
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="/about">About</Link>
-                </li>
+                
+                  <li>
+                    <Link to="/editorial" activeStyle={{ color: "rgb(255, 196, 186)" }}>EDITORIAL</Link>
+                  </li>
+
+                  <li>
+                    <Link to="/commercial" activeStyle={{ color: "rgb(255, 196, 186)" }}>COMMERCIAL</Link>
+                  </li>
+
+                  <li>
+                    <Link to="/beauty" activeStyle={{ color: "rgb(255, 196, 186)" }}>BEAUTY</Link>
+                  </li>
+
+                  <li>
+                    <Link to="/people" activeStyle={{ color: "rgb(255, 196, 186)" }}>PEOPLE</Link>
+                  </li>
+
+                  <li>
+                    <Link to="/" activeStyle={{ color: "rgb(255, 196, 186)" }}>FILM & TV</Link>
+                  </li>
+
+                  <li>
+                    <Link to="/about" activeStyle={{ color: "rgb(255, 196, 186)" }}>CONTACT</Link>
+                  </li>
+
+                  <li>
+                    <Link to="/about" activeStyle={{ color: "rgb(255, 196, 186)" }}>ABOUT</Link>
+                  </li>
+
               </ul>
               <p className="sidebar__social">
                 {data.allDatoCmsSocialProfile.edges.map(({ node: profile }) => (
@@ -135,15 +160,15 @@ const TemplateWrapper = ({ children }) => {
                   </li>
 
                   <li className="browser-header__menu">
-                    <Link to="/" activeStyle={{ color: "rgb(255, 196, 186)" }}>COMMERCIAL</Link>
+                    <Link to="/commercial" activeStyle={{ color: "rgb(255, 196, 186)" }}>COMMERCIAL</Link>
                   </li>
 
                   <li className="browser-header__menu">
-                    <Link to="/" activeStyle={{ color: "rgb(255, 196, 186)" }}>BEAUTY</Link>
+                    <Link to="/beauty" activeStyle={{ color: "rgb(255, 196, 186)" }}>BEAUTY</Link>
                   </li>
 
                   <li className="browser-header__menu">
-                    <Link to="/" activeStyle={{ color: "rgb(255, 196, 186)" }}>PEOPLE</Link>
+                    <Link to="/people" activeStyle={{ color: "rgb(255, 196, 186)" }}>PEOPLE</Link>
                   </li>
 
                   <li className="browser-header__menu">
@@ -157,6 +182,7 @@ const TemplateWrapper = ({ children }) => {
                   <li className="browser-header__menu">
                     <Link to="/about" activeStyle={{ color: "rgb(255, 196, 186)" }}>ABOUT</Link>
                   </li>
+
                 </ul>
                 
               </div>

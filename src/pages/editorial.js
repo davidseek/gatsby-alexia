@@ -31,7 +31,7 @@ const IndexPage = ({ data }) => (
 export default IndexPage
 
 export const query = graphql`
-  query EditorialQuery {
+  query EditorialsQuery {
     allDatoCmsEditorial(sort: { fields: [position], order: ASC }) {
       edges {
         node {  
@@ -45,6 +45,6 @@ export const query = graphql`
           }
         }
       }
-    }
+    } 
   }
 `
