@@ -30,7 +30,6 @@ const TemplateWrapper = ({ children }) => {
                 html
               } 
             } 
-            copyright
             logo {
               fluid(maxWidth: 450, imgixParams: { fm: "png", auto: "compress" }) {
                 ...GatsbyDatoCmsSizes
@@ -73,7 +72,7 @@ const TemplateWrapper = ({ children }) => {
               <ul className={`sidebar__menu ${showMenu ? "is-open" : ""}`}>
                 
                   <li>
-                    <Link to="/editorial" activeStyle={{ color: "rgb(255, 196, 186)" }}>EDITORIAL</Link>
+                    <Link to="/" activeStyle={{ color: "rgb(255, 196, 186)" }}>EDITORIAL</Link>
                   </li>
 
                   <li>
@@ -89,7 +88,7 @@ const TemplateWrapper = ({ children }) => {
                   </li>
 
                   <li>
-                    <Link to="/" activeStyle={{ color: "rgb(255, 196, 186)" }}>FILM & TV</Link>
+                    <Link to="/film" activeStyle={{ color: "rgb(255, 196, 186)" }}>FILM & TV</Link>
                   </li>
 
                   <li>
@@ -114,13 +113,13 @@ const TemplateWrapper = ({ children }) => {
                 ))}
               </p>
              
-              <p className="contact-copyright">
+              <div className="contact-copyright">
                 ©2019 
                 <a href="https://www.davidseek.com">
                   <p className="contact-copyright-url">David Seek</p>
                 </a>
                 <br />All rights reserved
-              </p>
+              </div>
 
             </div>
           </div> 
@@ -162,7 +161,7 @@ const TemplateWrapper = ({ children }) => {
                 <ul>
 
                   <li className="browser-header__menu">
-                    <Link to="/editorial" activeStyle={{ color: "rgb(255, 196, 186)" }}>EDITORIAL</Link>
+                    <Link to="/" activeStyle={{ color: "rgb(255, 196, 186)" }}>EDITORIAL</Link>
                   </li>
 
                   <li className="browser-header__menu">
@@ -178,7 +177,7 @@ const TemplateWrapper = ({ children }) => {
                   </li>
 
                   <li className="browser-header__menu">
-                    <Link to="/" activeStyle={{ color: "rgb(255, 196, 186)" }}>FILM & TV</Link>
+                    <Link to="/film" activeStyle={{ color: "rgb(255, 196, 186)" }}>FILM & TV</Link>
                   </li>
 
                   <li className="browser-header__menu">

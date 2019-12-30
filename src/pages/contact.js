@@ -22,13 +22,13 @@ const About = ({ data: { contact } }) => (
             <p className="contact-mail">{contact.email}</p>
         </a>
 
-        <p className="contact-copyright">
+        <div className="contact-copyright">
             ©2019 
             <a href="https://www.davidseek.com">
                 <p className="contact-copyright-url">David Seek</p>
             </a>
             - All rights reserved
-        </p>
+        </div>
 
       </div>
     </article>
