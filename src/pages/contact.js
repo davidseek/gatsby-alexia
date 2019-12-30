@@ -14,11 +14,22 @@ const About = ({ data: { contact } }) => (
           <Img fluid={contact.photo.fluid} />
         </div>
 
-        <p className="contact-phone">{contact.phoneNumber}</p>
+        <a href={'tel:' + contact.phoneNumber}>
+            <p className="contact-phone">{contact.phoneNumber}</p>
+        </a>
 
         <a href={'mailto:' + contact.email}>
             <p className="contact-mail">{contact.email}</p>
         </a>
+
+        <p className="contact-copyright">
+            ©2019 
+            <a href="https://www.davidseek.com">
+                <p className="contact-copyright-url">David Seek</p>
+            </a>
+            - All rights reserved
+        </p>
+
       </div>
     </article>
   </Layout>

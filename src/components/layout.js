@@ -113,9 +113,15 @@ const TemplateWrapper = ({ children }) => {
                   </a>
                 ))}
               </p>
-              <div className="sidebar__copyright">
-                {data.datoCmsHome.copyright}
-              </div>
+             
+              <p className="contact-copyright">
+                ©2019 
+                <a href="https://www.davidseek.com">
+                  <p className="contact-copyright-url">David Seek</p>
+                </a>
+                <br />All rights reserved
+              </p>
+
             </div>
           </div> 
 
