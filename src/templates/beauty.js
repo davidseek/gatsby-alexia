@@ -10,20 +10,28 @@ export default ({ data }) => (
     <article className="sheet">
       <HelmetDatoCms seo={data.datoCmsBeauty.seoMetaTags} />
       <div className="sheet__inner">
+
         <h1 className="sheet__title">{data.datoCmsBeauty.title}</h1>
-        <div className="sheet__slider">
-          <Slider infinite={true} slidesToShow={2} arrows>
-            {data.datoCmsBeauty.gallery.map(({ fluid }) => (
-              <img alt={data.datoCmsBeauty.title} key={fluid.src} src={fluid.src} />
-            ))}
-          </Slider>
-        </div>
+
         <div 
           className="sheet__body"
           dangerouslySetInnerHTML={{
             __html: data.datoCmsBeauty.descriptionNode.childMarkdownRemark.html,
           }}
         />
+
+
+        {data.datoCmsBeauty.gallery.map(({ fluid }) => (
+
+          <div className="showcase__item">
+
+            <figure className="card">
+              <img alt={data.datoCmsBeauty.title} key={fluid.src} src={fluid.src} />
+            </figure>
+
+          </div>
+        ))}
+
       </div>
     </article>
   </Layout>

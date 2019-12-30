@@ -93,7 +93,7 @@ const TemplateWrapper = ({ children }) => {
                   </li>
 
                   <li>
-                    <Link to="/about" activeStyle={{ color: "rgb(255, 196, 186)" }}>CONTACT</Link>
+                    <Link to="/contact" activeStyle={{ color: "rgb(255, 196, 186)" }}>CONTACT</Link>
                   </li>
 
                   <li>
@@ -176,7 +176,7 @@ const TemplateWrapper = ({ children }) => {
                   </li>
 
                   <li className="browser-header__menu">
-                    <Link to="/about" activeStyle={{ color: "rgb(255, 196, 186)" }}>CONTACT</Link>
+                    <Link to="/contact" activeStyle={{ color: "rgb(255, 196, 186)" }}>CONTACT</Link>
                   </li>
 
                   <li className="browser-header__menu">
