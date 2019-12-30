@@ -38,49 +38,49 @@ exports.createPages = ({ graphql, actions }) => {
       }
     `).then(result => {
 
-      result.data.allDatoCmsEditorial.edges.map(({ node: editorial }) => {
+      result.data.allDatoCmsEditorial.edges.map(({ node: element }) => {
 
         createPage({
-          path: `works/${editorial.slug}`,
+          path: `works/${element.slug}`,
           component: path.resolve(`./src/templates/editorial.js`),
           context: {
-            slug: editorial.slug,
+            slug: element.slug,
           },
         })
 
       })
 
-      result.data.allDatoCmsCommercial.edges.map(({ node: commercial }) => {
+      result.data.allDatoCmsCommercial.edges.map(({ node: element }) => {
 
         createPage({
-          path: `works/${commercial.slug}`,
+          path: `works/${element.slug}`,
           component: path.resolve(`./src/templates/commercial.js`),
           context: {
-            slug: commercial.slug,
+            slug: element.slug,
           },
         })
 
       })
  
-      result.data.allDatoCmsBeauty.edges.map(({ node: beauty }) => {
+      result.data.allDatoCmsBeauty.edges.map(({ node: element }) => {
 
         createPage({
-          path: `works/${beauty.slug}`,
+          path: `works/${element.slug}`,
           component: path.resolve(`./src/templates/beauty.js`),
           context: {
-            slug: beauty.slug,
+            slug: element.slug,
           },
         })
 
       })
 
-      result.data.allDatoCmsPeoplemodel.edges.map(({ node: people }) => {
+      result.data.allDatoCmsPeoplemodel.edges.map(({ node: element }) => {
 
         createPage({
-          path: `works/${people.slug}`,
+          path: `works/${element.slug}`,
           component: path.resolve(`./src/templates/people.js`),
           context: {
-            slug: people.slug,
+            slug: element.slug,
           },
         })
 

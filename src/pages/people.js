@@ -7,19 +7,16 @@ import Layout from "../components/layout"
 const IndexPage = ({ data }) => (
   <Layout>
     <Masonry className="showcase">
-      {data.allDatoCmsPeoplemodel.edges.map(({ node: work }) => (
-        <div key={work.id} className="showcase__item">
+      {data.allDatoCmsPeoplemodel.edges.map(({ node: element }) => (
+        <div key={element.id} className="showcase__item">
           <figure className="card">
-            <Link to={`/works/${work.slug}`} className="card__image">
-              <Img fluid={work.coverImage.fluid} />
+            <Link to={`/works/${element.slug}`} className="card__image">
+              <Img fluid={element.coverImage.fluid} />
             </Link>
             <figcaption className="card__caption">
               <h6 className="card__title">
-                <Link to={`/works/${work.slug}`}>{work.title}</Link>
+                <Link to={`/works/${element.slug}`}>{element.title}</Link>
               </h6>
-              <div className="card__description">
-                <p>{work.excerpt}</p>
-              </div>
             </figcaption>
           </figure>
         </div>
