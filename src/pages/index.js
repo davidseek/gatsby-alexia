@@ -6,30 +6,32 @@ import Layout from "../components/layout"
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <Masonry className="showcase">
-      {data.allDatoCmsEditorial.edges.map(({ node: element }) => (
-        <div key={element.id} className="showcase__item">
-          <figure className="card">
-            <Link to={`/works/${element.slug}`} className="card__image">
-              <Img fluid={element.coverImage.fluid} />
-            </Link>
-            <figcaption className="card__caption">
-              <h6 className="card__title">
-                <Link to={`/works/${element.slug}`}>{element.title}</Link>
-              </h6>
-            </figcaption>
-          </figure>
+    <div>
+      <Masonry className="showcase">
+        {data.allDatoCmsEditorial.edges.map(({ node: element }) => (
+          <div key={element.id} className="showcase__item">
+            <figure className="card">
+              <Link to={`/works/${element.slug}`} className="card__image">
+                <Img fluid={element.coverImage.fluid} />
+              </Link>
+              <figcaption className="card__caption">
+                <h6 className="card__title">
+                  <Link to={`/works/${element.slug}`}>{element.title}</Link>
+                </h6>
+              </figcaption>
+            </figure>
+          </div>
+        ))}
+      </Masonry>
+
+      <div className="imprint-container">
+        <div className="imprint-buttons">
+          <Link to={`/imprint`}>IMPRINT</Link>
         </div>
-      ))}
-    </Masonry>
 
-    <div className="imprint-container">
-      <div className="imprint-buttons">
-        <Link to={`/imprint`}>IMPRINT</Link>
-      </div>
-
-      <div className="imprint-buttons">
-        <Link to={`/datenschutz`}>DATENSCHUTZ</Link>
+        <div className="imprint-buttons">
+          <Link to={`/datenschutz`}>DATENSCHUTZ</Link>
+        </div>
       </div>
     </div>
   </Layout>
