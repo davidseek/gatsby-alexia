@@ -1,39 +1,74 @@
-import React from 'react'
+import React, { useState } from "react";
 import { HelmetDatoCms } from 'gatsby-source-datocms'
-import { graphql } from 'gatsby'
 import Layout from "../components/layout"
+import { Dialog } from '@reach/dialog';
+import '@reach/dialog/styles.css';
+import close from '../assets/close-button.png'
 
-export default ({ data }) => (
-  <Layout>
-    <article className="sheet">
-      <HelmetDatoCms seo={data.datoCmsCommercial.seoMetaTags} />
-      <div className="work__inner">
+const TemplateWrapper = ({ data }) => {
 
-        <h1 className="sheet__title">{data.datoCmsCommercial.title}</h1>
+    const [showImage, setShowImage] = useState(false);
+    const [image, setImage] = useState('');
 
-        <div 
-          className="work__body"
-          dangerouslySetInnerHTML={{
-            __html: data.datoCmsCommercial.descriptionNode.childMarkdownRemark.html,
-          }}
-        />
+    return (
+        <Layout>
 
+            <div>
+                {showImage && (
+                    <Dialog className="image__dialog" aria-labelledby="image__dialog">
+                        <div>
+                            <img 
+                                className="image__large"
+                                key={image} 
+                                src={image}
+                            />
 
-        {data.datoCmsCommercial.gallery.map(({ fluid }) => (
+                            <img 
+                                alt="close-button"
+                                key="close-button"
+                                src={close}
+                                className="image__close-button"
+                                onClick={() => setShowImage(!showImage)}
+                            />
+                        </div>
+                    </Dialog>
+                )}
 
-          <div className="work__item">
+                <article className="sheet">
+                    <HelmetDatoCms seo={data.datoCmsCommercial.seoMetaTags} />
+                    <div className="work__inner">
+                        <h1 className="sheet__title">{data.datoCmsCommercial.title}</h1>
+                        <div 
+                            className="work__body"
+                            dangerouslySetInnerHTML={{
+                                __html: data.datoCmsCommercial.descriptionNode.childMarkdownRemark.html,
+                            }}
+                        />
 
-            <figure className="card">
-              <img alt={data.datoCmsCommercial.title} key={fluid.src} src={fluid.src} />
-            </figure>
+                            {data.datoCmsCommercial.gallery.map(({ fluid }) => (
+                                <div key={fluid.src} className="work__item">
+                                    <figure className="card">
+                                        <img 
+                                            alt={data.datoCmsCommercial.title} 
+                                            key={fluid.src} 
+                                            src={fluid.src}
+                                            onClick={() => {
+                                                console.log('onClick: ', fluid.src);
+                                                setImage(fluid.src);
+                                                setShowImage(!showImage);
+                                            }} 
+                                        />
+                                    </figure>
+                                </div>
+                            ))}
+                    </div>
+                </article>
+            </div>
+        </Layout>
+    );
+}
 
-          </div>
-        ))}
-
-      </div>
-    </article>
-  </Layout>
-)
+export default TemplateWrapper
 
 export const query = graphql`
   query CommercialQuery($slug: String!) {

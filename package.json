@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "David Seek <info@davidseek.com>",
   "dependencies": {
+    "@reach/dialog": "^0.7.0",
     "dotenv": "^8.1.0",
     "gatsby": "^2.15.30",
     "gatsby-image": "^2.2.24",
@@ -30,7 +31,7 @@
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\""
   },
-  "devDependencies": { 
+  "devDependencies": {
     "prettier": "^1.17.0"
   }
 }

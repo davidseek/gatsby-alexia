@@ -1,5 +1,7 @@
 .work__item
   margin-bottom: 30px
+  display: inline-block
+  box-sizing: border-box
 
   .card
        text-align: center
@@ -9,22 +11,11 @@
 
 @media screen and (max-width: 400px)
   .work__item
-    box-sizing: border-box
     width: 100%
 
 @media screen and (min-width: 401px)
   .work__item
-    box-sizing: border-box
     width: (100% / 2)
-    float: left
-    padding-left: 15px
-
-@media screen and (min-width: 1400px)
-  .work__item
-    width: (100% / 2)
-
-@media screen and (min-width: 1100px)
-  .work__item
     padding-left: 15px
 
 .work__inner
