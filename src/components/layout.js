@@ -67,7 +67,7 @@ const TemplateWrapper = ({ children }) => {
                     data.datoCmsHome.introTextNode.childMarkdownRemark.html
                 }}
               />
-              <ul className={`sidebar__menu ${showMenu ? "is-open" : ""}`}>
+              <ul className="sidebar__menu">
                 
                   <li>
                     <Link to="/">EDITORIAL</Link>
