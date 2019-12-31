@@ -21,6 +21,7 @@ const TemplateWrapper = ({ data }) => {
                                 className="image__large"
                                 key={image} 
                                 src={image}
+                                alt="work"
                             />
 
                             <img 
