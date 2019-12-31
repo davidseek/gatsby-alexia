@@ -70,31 +70,31 @@ const TemplateWrapper = ({ children }) => {
               <ul className={`sidebar__menu ${showMenu ? "is-open" : ""}`}>
                 
                   <li>
-                    <Link to="/" activeStyle={{ color: "rgb(255, 196, 186)" }}>EDITORIAL</Link>
+                    <Link to="/">EDITORIAL</Link>
                   </li>
 
                   <li>
-                    <Link to="/commercial" activeStyle={{ color: "rgb(255, 196, 186)" }}>COMMERCIAL</Link>
+                    <Link to="/commercial">COMMERCIAL</Link>
                   </li>
 
                   <li>
-                    <Link to="/beauty" activeStyle={{ color: "rgb(255, 196, 186)" }}>BEAUTY</Link>
+                    <Link to="/beauty">BEAUTY</Link>
                   </li>
 
                   <li>
-                    <Link to="/people" activeStyle={{ color: "rgb(255, 196, 186)" }}>PEOPLE</Link>
+                    <Link to="/people">PEOPLE</Link>
                   </li>
 
                   <li>
-                    <Link to="/film" activeStyle={{ color: "rgb(255, 196, 186)" }}>FILM & TV</Link>
+                    <Link to="/film">FILM & TV</Link>
                   </li>
 
                   <li>
-                    <Link to="/contact" activeStyle={{ color: "rgb(255, 196, 186)" }}>CONTACT</Link>
+                    <Link to="/contact">CONTACT</Link>
                   </li>
 
                   <li>
-                    <Link to="/about" activeStyle={{ color: "rgb(255, 196, 186)" }}>ABOUT</Link>
+                    <Link to="/about">ABOUT</Link>
                   </li>
 
               </ul>
