@@ -131,7 +131,7 @@ const TemplateWrapper = ({ children }) => {
 
               <div className="header">
 
-                <a className="header__a" href="./">
+                <a className="header__a" href="/">
                   <Img fluid={data.datoCmsHome.logo.fluid} className="header__logo" alt="logo" />
                 </a>  
 
@@ -152,7 +152,7 @@ const TemplateWrapper = ({ children }) => {
 
               <div className="header">
 
-                <a className="header__a" href="./">
+                <a className="header__a" href="/">
                   <Img fluid={data.datoCmsHome.logo.fluid} className="header__logo" alt="logo" />
                 </a>
 
