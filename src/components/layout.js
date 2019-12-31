@@ -55,8 +55,6 @@ const TemplateWrapper = ({ children }) => {
             seo={data.datoCmsHome.seoMetaTags}
           />
 
-          <div className="sidebar__overlay"></div>
-
           <div className="container__sidebar">
             <div className="sidebar">
 
@@ -74,31 +72,31 @@ const TemplateWrapper = ({ children }) => {
               <ul className="sidebar__menu">
                 
                   <li>
-                    <a href="/">EDITORIAL</a>
+                    <a class="sidebar__link" href="/">EDITORIAL</a>
                   </li>
 
                   <li>
-                    <a href="/commercial">COMMERCIAL</a>
+                    <a class="sidebar__link" href="/commercial">COMMERCIAL</a>
                   </li>
 
                   <li>
-                    <a href="/beauty">BEAUTY</a>
+                    <a class="sidebar__link" href="/beauty">BEAUTY</a>
                   </li>
 
                   <li>
-                    <a href="/people">PEOPLE</a>
+                    <a class="sidebar__link" href="/people">PEOPLE</a>
                   </li>
 
                   <li>
-                    <a href="/film">FILM & TV</a>
+                    <a class="sidebar__link" href="/film">FILM & TV</a>
                   </li>
 
                   <li>
-                    <a href="/contact">CONTACT</a>
+                    <a class="sidebar__link" href="/contact">CONTACT</a>
                   </li>
 
                   <li>
-                    <a href="/about">ABOUT</a>
+                    <a class="sidebar__link" href="/about">ABOUT</a>
                   </li>
 
               </ul>
