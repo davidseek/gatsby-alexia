@@ -10,12 +10,12 @@ const IndexPage = ({ data }) => (
       {data.allDatoCmsPeoplemodel.edges.map(({ node: element }) => (
         <div key={element.id} className="showcase__item">
           <figure className="card">
-            <Link to={`/works/${element.slug}`} className="card__image">
+            <a href={`/works/${element.slug}`} className="card__image">
               <Img fluid={element.coverImage.fluid} />
-            </Link>
+            </a>
             <figcaption className="card__caption">
               <h6 className="card__title">
-                <Link to={`/works/${element.slug}`}>{element.title}</Link>
+                <a href={`/works/${element.slug}`}>{element.title}</a>
               </h6>
             </figcaption>
           </figure>
